@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-27",
+  "base_commit": "ee3a5c01abe8ba5795109f89cfebd1e7b4cfd044",
+  "scope": "W9 harness investigation only; no full suite, ablation, or efficacy conclusion",
+  "rubric_changed": false,
+  "runs": [
+    {
+      "condition": "original external-fixture discovery",
+      "runs": 1,
+      "score": 0.25,
+      "cost_usd": 0.1371948,
+      "fixture_read": false,
+      "observed_problem": "Glob and Grep attempted the parent of the allowed cwd and were denied; auditor explicitly abstained",
+      "judge_votes": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "condition": "exact raw fixture inline, same key and grader",
+      "runs": 1,
+      "score": 0.25,
+      "cost_usd": 0.20684379999999997,
+      "fixture_read": "provided directly in prompt; no lookup needed",
+      "permission_denials": 0,
+      "observed_result": "Candidate names blocked cross-tenant read, exception-type distinction, shared dictionary reference, and internal_note projection defect",
+      "judge_votes": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "additional_adjudication": {
+    "model": "sonnet",
+    "result": "PASS",
+    "same_rubric": true,
+    "cost_usd": 0.051658899999999994,
+    "limitation": "LLM adjudication only; does not override original votes or prove the cause of their disagreement"
+  },
+  "total_reported_cost_usd": 0.3956975,
+  "remaining": [
+    "Automatic FAIL vs additional PASS is unresolved: automatic runner exposes votes without per-criterion rationale",
+    "Candidate severity calibration and external exposure should be checked by a human",
+    "No full-suite results and no baseline arm; no evidence of improvement over default model behavior"
+  ],
+  "artifacts": "Raw outputs, candidate trace excerpts and HTML reports delivered in engineering-agents-review-evidence.zip; runner evals/results remain ignored"
+}

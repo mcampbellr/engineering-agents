@@ -1,0 +1,18 @@
+schema_version: "1.1"
+name: "memory-data-audit-m4"
+description: "Caso M4 del especialista memory-data-audit; clave en evaluation/answer-key.json"
+tags:
+  - memory-data-audit
+  - m4
+execution:
+  prompt: "Usa la skill memory-data-audit para este encargo.\n\nAPI usa cursor por created_at sin desempate; muchos registros comparten timestamp. Caché global key=URL con TTL=1h; URL igual para todos los tenants, respuestas privadas y no hay namespace adicional."
+  max_turns: 12
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill]
+runs: 3
+graders:
+  - name: skill-fired
+    type: tool_used
+    tool: Skill
+    input_match: "memory-data-audit"
+    min: 1

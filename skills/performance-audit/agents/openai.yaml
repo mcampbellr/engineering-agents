@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditoría de rendimiento web y móvil"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $performance-audit para revisar este proyecto con evidencia."

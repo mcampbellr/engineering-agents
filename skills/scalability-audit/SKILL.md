@@ -1,0 +1,22 @@
+---
+name: scalability-audit
+description: "Audit system scalability, throughput, tail latency, overload and resilience using workload evidence. Use for architecture or backend capacity reviews, not a standalone client rendering audit."
+---
+
+# Arquitecto de escalabilidad y rendimiento
+
+Lee [el contrato común](references/contract.md) antes de auditar; aplica después los controles siguientes. Consulta [fuentes](references/sources.md) para verificar las afirmaciones aplicables. Al exportar informes, lee [reporting](references/reporting.md), valida contra su [esquema](references/report.schema.json) y pasa el JSON por [su validador](scripts/validate_report.py) antes de entregar, usando la ruta absoluta de esa skill y `--repo <repositorio-auditado>`.
+
+## Alcance
+Sigue el camino crítico completo: cliente, edge, API, workers, colas, pools, base de datos y dependencias externas. Separa tiempo de CPU, espera de I/O, cola y bloqueo. Si el encargo es sólo diseño, presenta alternativas y experimento de decisión; no inventes hallazgos de código inexistente.
+
+## Controles y criterios
+- SLI/SLO: define operaciones buenas y total elegible, ventana, latencia end-to-end y error budget. Expresa el objetivo de latencia como proporción de peticiones bajo umbral y con grados múltiples, no como un solo percentil; declara dónde se mide el SLI y usa ventana deslizante de semanas enteras. Examina p50/p95/p99 junto a errores y saturación; distingue timeout del cliente de trabajo que continúa en servidor.
+- Capacidad: mide throughput completado al SLO, carga ofrecida, utilización por recurso, profundidad y edad de cola, wait de pools y distribución por tenant. Considera hot keys, burst y crecimiento; usa estimaciones como estimaciones con supuestos.
+- Overload: identifica límites de concurrencia/cola, backpressure, cancelación, deadlines propagados y load shedding. Define qué se degrada primero por criticidad y si esa criticidad se propaga a las llamadas derivadas; incluye rechazo adaptativo en el cliente antes de salir a la red. Una cola creciente sin límite mueve el fallo al futuro. Verifica fairness y aislamiento de consumidores, y recuperación tras retirar carga.
+- Resiliencia: traza intentos por capa, retry budget, jitter, backoff, idempotencia y duplicados en operaciones con efectos. Exige un propietario único del reintento en la pila y deriva timeout y deadline de un percentil medido de la dependencia, no de un número redondo. Cuenta intentos totales incluyendo el original; no uses ambiguamente “retries”. Evalúa amplificación y tormentas ante dependencia lenta.
+- Escala horizontal: comprueba estado local, sesiones, coordinación, locks, particiones y conexiones a DB antes de proponer réplicas. Contrasta escalar con reducir trabajo, corregir consulta o limitar concurrencia. Incluye costo por operación y complejidad operativa.
+- Autoescalado: trátalo como lazo de control, no como decisión única: señal y punto de medición, retardo hasta que una instancia nueva sirve, asimetría al subir y bajar, mínimo/máximo con cuota, y umbral de escalado por debajo del de shedding. Si el burst dura menos que el arranque, sólo shedding y cola acotada aplican en esa ventana. Comprueba que una réplica nueva sirva con caché frío y qué dependencia absorbe la carga añadida.
+
+## Experimento
+Propón baseline, carga nominal, escalones de concurrencia/llegadas, burst, dependencia lenta y recuperación midiendo a qué nivel debe bajar la carga para estabilizar y no sólo que baje, con límites de parada por presupuesto de entorno. Elige modelo abierto/cerrado según el tráfico: un generador cerrado reduce llegadas al subir latencia y puede ocultar overload; en cerrado registra la tasa de iteraciones lograda frente a la pretendida, y en abierto las descartadas por falta de generadores. Calienta y repite; no extrapoles una máquina local a producción. Define éxito como SLO más integridad y recuperación, no RPS máximo. Entrega bottleneck probado o hipótesis falsable, métrica, presupuesto y cambio mínimo.

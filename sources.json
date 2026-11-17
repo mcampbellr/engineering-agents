@@ -1,0 +1,202 @@
+[
+  {
+    "id": "sre-slo",
+    "title": "Google SRE — Implementing SLOs",
+    "url": "https://sre.google/workbook/implementing-slos/",
+    "verified_on": "2026-10-26",
+    "use": "SLI, SLO, ventanas y error budgets; objetivos derivados del servicio.",
+    "scope": "role"
+  },
+  {
+    "id": "sre-overload",
+    "title": "Google SRE — Handling Overload",
+    "url": "https://sre.google/sre-book/handling-overload/",
+    "verified_on": "2026-10-26",
+    "use": "Saturación, colas y rechazo controlado.",
+    "scope": "role"
+  },
+  {
+    "id": "aws-retries",
+    "title": "AWS Builders Library — Timeouts, retries, and backoff with jitter",
+    "url": "https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter",
+    "verified_on": "2026-10-26",
+    "use": "Timeouts, idempotencia y amplificación de intentos entre capas.",
+    "scope": "role"
+  },
+  {
+    "id": "k6-load",
+    "title": "Grafana k6 — Open and closed models",
+    "url": "https://grafana.com/docs/k6/latest/using-k6/scenarios/concepts/open-vs-closed/",
+    "verified_on": "2026-10-26",
+    "use": "Elección del modelo de carga y coordinated omission.",
+    "scope": "role"
+  },
+  {
+    "id": "asvs",
+    "title": "OWASP ASVS 5.0.0 (tag v5.0.0, texto de los requisitos)",
+    "url": "https://github.com/OWASP/ASVS/tree/v5.0.0/5.0/en",
+    "verified_on": "2026-10-26",
+    "use": "Requisitos verificables por capítulo; asvs.owasp.org no publica páginas por requisito.",
+    "scope": "role"
+  },
+  {
+    "id": "wstg",
+    "title": "OWASP WSTG v4.2",
+    "url": "https://wstg.owasp.org/v4.2/",
+    "verified_on": "2026-10-26",
+    "use": "Procedimientos de prueba web versionados; se usa v4.2, no latest mutable.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-constraints",
+    "title": "PostgreSQL 18 — Constraints",
+    "url": "https://www.postgresql.org/docs/18/ddl-constraints.html",
+    "verified_on": "2026-10-26",
+    "use": "Integridad con PK, FK, UNIQUE, CHECK y nullabilidad.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-isolation",
+    "title": "PostgreSQL 18 — Transaction Isolation",
+    "url": "https://www.postgresql.org/docs/18/transaction-iso.html",
+    "verified_on": "2026-10-26",
+    "use": "Anomalías, snapshots y serialización; adaptar a motor/versión reales.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-explain",
+    "title": "PostgreSQL 18 — Using EXPLAIN",
+    "url": "https://www.postgresql.org/docs/18/using-explain.html",
+    "verified_on": "2026-10-26",
+    "use": "Planes, costos estimados, tiempos reales, loops y buffers.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-indexes",
+    "title": "PostgreSQL 18 — Multicolumn Indexes",
+    "url": "https://www.postgresql.org/docs/18/indexes-multicolumn.html",
+    "verified_on": "2026-10-26",
+    "use": "Índices compuestos y capacidades dependientes de la versión.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-pagination",
+    "title": "PostgreSQL 18 — LIMIT and OFFSET",
+    "url": "https://www.postgresql.org/docs/18/queries-limit.html",
+    "verified_on": "2026-10-26",
+    "use": "Orden predecible y costo de filas omitidas.",
+    "scope": "role"
+  },
+  {
+    "id": "node-streams",
+    "title": "Node.js — Backpressuring in Streams",
+    "url": "https://nodejs.org/learn/modules/backpressuring-in-streams",
+    "verified_on": "2026-10-26",
+    "use": "Respeto de backpressure para controlar acumulación.",
+    "scope": "role"
+  },
+  {
+    "id": "node-heap",
+    "title": "Node.js — Using Heap Snapshot",
+    "url": "https://nodejs.org/learn/diagnostics/memory/using-heap-snapshot",
+    "verified_on": "2026-10-26",
+    "use": "Diagnóstico con riesgo de pausa y memoria adicional.",
+    "scope": "role"
+  },
+  {
+    "id": "python-memory",
+    "title": "Python — tracemalloc",
+    "url": "https://docs.python.org/3/library/tracemalloc.html",
+    "verified_on": "2026-10-27",
+    "use": "Asignaciones rastreadas y comparación de snapshots; comprobar versión instalada.",
+    "scope": "role"
+  },
+  {
+    "id": "go-diagnostics",
+    "title": "Go — Diagnostics",
+    "url": "https://go.dev/doc/diagnostics",
+    "verified_on": "2026-10-26",
+    "use": "Perfiles CPU, memoria, bloqueo y trazas según síntoma.",
+    "scope": "role"
+  },
+  {
+    "id": "redis-eviction",
+    "title": "Redis — Key eviction",
+    "url": "https://redis.io/docs/latest/develop/reference/eviction/",
+    "verified_on": "2026-10-27",
+    "use": "Límite de memoria y políticas de eviction; comprobar versión/despliegue.",
+    "scope": "role"
+  },
+  {
+    "id": "sre-cascading",
+    "title": "Google SRE — Addressing Cascading Failures",
+    "url": "https://sre.google/sre-book/addressing-cascading-failures/",
+    "verified_on": "2026-10-26",
+    "use": "Longitud de cola frente al pool, deadline propagation, caché frío y nivel de carga necesario para recuperar.",
+    "scope": "role"
+  },
+  {
+    "id": "sre-managing-load",
+    "title": "Google SRE Workbook — Managing Load",
+    "url": "https://sre.google/workbook/managing-load/",
+    "verified_on": "2026-10-26",
+    "use": "Autoescalado como lazo de control, retardo de turnup, asimetría y su interacción con shedding.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-altertable",
+    "title": "PostgreSQL 18 — ALTER TABLE",
+    "url": "https://www.postgresql.org/docs/18/sql-altertable.html",
+    "verified_on": "2026-10-26",
+    "use": "Niveles de lock, ADD CONSTRAINT NOT VALID y VALIDATE CONSTRAINT en migraciones.",
+    "scope": "role"
+  },
+  {
+    "id": "cgroup-v2",
+    "title": "Linux kernel — Control Group v2",
+    "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+    "verified_on": "2026-10-26",
+    "use": "memory.max, memory.peak, memory.events/oom_kill y a quién se carga el page cache.",
+    "scope": "role"
+  },
+  {
+    "id": "pg-populate",
+    "title": "PostgreSQL 18 — Populating a Database",
+    "url": "https://www.postgresql.org/docs/18/populate.html",
+    "verified_on": "2026-10-26",
+    "use": "COPY frente a INSERT, orden de índices y constraints, y ANALYZE tras carga masiva.",
+    "scope": "role"
+  },
+  {
+    "id": "codex-plugin",
+    "title": "OpenAI — Package your plugin",
+    "url": "https://developers.openai.com/plugins/build/plugins",
+    "verified_on": "2026-10-26",
+    "use": "Manifest del paquete y skills.",
+    "scope": "package"
+  },
+  {
+    "id": "codex-portability",
+    "title": "OpenAI — Submit your Claude Code plugin",
+    "url": "https://developers.openai.com/plugins/guides/submit-claude-plugin",
+    "verified_on": "2026-10-26",
+    "use": "Portar comportamiento reutilizable de agentes Claude a skills.",
+    "scope": "package"
+  },
+  {
+    "id": "claude-agents",
+    "title": "Claude Code — Create custom subagents",
+    "url": "https://code.claude.com/docs/en/sub-agents",
+    "verified_on": "2026-10-26",
+    "use": "Frontmatter y herramientas de subagentes.",
+    "scope": "package"
+  },
+  {
+    "id": "claude-plugin",
+    "title": "Claude Code — Plugin manifest reference",
+    "url": "https://code.claude.com/docs/en/plugins-reference",
+    "verified_on": "2026-10-26",
+    "use": "Descubrimiento de skills/ y agents/.",
+    "scope": "package"
+  }
+]

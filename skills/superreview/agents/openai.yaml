@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superreview"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $superreview para revisar este proyecto con evidencia."

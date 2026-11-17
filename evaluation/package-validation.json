@@ -1,0 +1,53 @@
+{
+  "skills": [
+    {
+      "skill": "data-architecture-audit",
+      "quick_validate": "passed"
+    },
+    {
+      "skill": "memory-data-audit",
+      "quick_validate": "passed"
+    },
+    {
+      "skill": "scalability-audit",
+      "quick_validate": "passed"
+    },
+    {
+      "skill": "web-security-audit",
+      "quick_validate": "passed"
+    }
+  ],
+  "relative_references": "resolved",
+  "claude_agent_frontmatter": "parsed",
+  "report_schema": "valid Draft 2020-12; 11 semantic invariants enforced, probed by evaluation/schema_invariants.py (14/14 accept-reject probes match)",
+  "adapter_generation": "checked separately",
+  "behavioral_model_evaluation": "W9 only, one run before and one after fixture delivery repair, ablation none; both automatic scores 0.25; additional adjudication PASS does not resolve disagreement",
+  "global_installation": "Claude Code user-scope installed and enabled on 2026-10-27 as engineering-agents@devup; readFromFolder=~/.dotfiles/plugins/engineering-agents; Codex not installed",
+  "claude_plugin_validate": "passed; optional directory icon warning; no marketplace registration",
+  "report_validator": "9 regression tests pass; dependency absence exit 2; unknown locations fail by default; copied standalone skill validates via bundled schema",
+  "host_plugin_load": "Prior recorded full Claude host load 2.1.310; current W9 trace on 2.1.309 lists four agents and four skills; current manifest validation rerun separately",
+  "codex_plugin_load": "Codex app-server 0.164.0-alpha.11.1 plugin/read successfully reads portable manifest and discovers four namespaced skills; no installation or model turn",
+  "source_urls": "Historical 25/25 HTTP 200 check on 2026-10-26; Python tracemalloc and Redis eviction sources reopened on 2026-10-27",
+  "evaluation_suite": "18 cases; 17 still unrun; generated prompts embed exact raw fixtures; rubric unchanged",
+  "review_date": "2026-10-27",
+  "package_version": "0.2.1",
+  "migration": {
+    "date": "2026-10-27",
+    "skills": 12,
+    "native_agents": 25,
+    "canonical_sources": "profiles + core for four specialists; source-skills for eight migrated workflows",
+    "output": "shared report envelope with domain detail and fixed/open finding states",
+    "claude_discovery": "control-protocol initialize returns 12 namespaced commands and 25 namespaced agents; no model turn",
+    "codex_discovery": "app-server plugin/read returns 12 namespaced skills; no model turn",
+    "mechanical_tests": "9 validation regressions, 10 bundle/deployment integration checks, 14 original schema probes",
+    "skill_validation": "11 generic quick_validate passes; security-audit keeps three Claude-specific frontmatter fields rejected by the generic linter, and is accepted by both actual hosts",
+    "memory_rule": "mem-propose-matching-skills-for-reviews-audits created and re-read; must_follow preference",
+    "model_quality": "not evaluated for eight migrations; no paid evaluation runs"
+  },
+  "legacy_cleanup": {
+    "claude_skills_retired": 8,
+    "claude_agents_retired": 3,
+    "codex": "12 links load the new package; no older implementation remains active",
+    "verification": "deployment regression checks removal and preservation of unrelated agents"
+  }
+}

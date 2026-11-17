@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reuse Review"
+  short_description: "Audit duplication and missed reuse across any stack"
+  default_prompt: "Use $reuse-review to audit this change for duplicated code and missed reuse, with evidence for both locations."

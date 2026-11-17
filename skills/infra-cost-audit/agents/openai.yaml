@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditoría de costos de infraestructura"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $infra-cost-audit para revisar este proyecto con evidencia."
