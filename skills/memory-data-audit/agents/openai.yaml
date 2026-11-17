@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista en memoria y datos masivos"
+  short_description: "Auditoría con evidencia y validación reproducible"
+  default_prompt: "Usa $memory-data-audit para auditar este proyecto y justificar cada hallazgo."

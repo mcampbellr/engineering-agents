@@ -1,0 +1,11 @@
+# Exportación JSON
+
+Usa report.schema.json. Este esquema verifica estructura, no veracidad. `environment` debe incluir stack/versiones, carga/dataset/seed, hardware/límites, instrumentos, comandos y parámetros, fecha, calentamiento/duración, repeticiones y artefactos cuando exista medición; las claves son obligatorias y los desconocidos se registran como null, nunca se omiten. No inventes muestras para llenar campos.
+
+El esquema rechaza por sí solo: un hallazgo `measured` sin validación ejecutada y sin artefacto; `executed=true` sin artefacto y `executed=false` con artefacto; un hallazgo `measured` o `static` sin ubicación; un control `pass`/`fail` sin evidencia; una métrica con valor pero sin artefacto o sin `sample_size`; una métrica sin valor que traiga artefacto o `sample_size`; `requires_changes` sin al menos un defecto confirmado de severidad `critical`/`high`/`medium`; y `no_blocking_findings` junto a un `critical` o `high` confirmado. Si el esquema acepta tu informe, eso no lo vuelve cierto.
+
+Lo que el esquema no puede comprobar lo comprueba `python3 <ruta-absoluta-del-paquete-o-skill>/scripts/validate_report.py <report.json> --repo <ruta>`: que cada `source_id` resuelva a una fuente declarada, que cada ubicación exista en la revisión declarada y no apunte más allá del final del archivo, que no haya ids duplicados, que un informe con medición traiga instrumentos, comandos, fecha y artefactos, y la cobertura calculada = probados / aplicables. El entorno necesita `jsonschema` (ver `requirements-validation.txt`); si falta, el validador termina con código 2 y la validación sigue pendiente. Las ubicaciones inexistentes o fuera del repositorio son errores, nunca simples notas. Córrelo antes de entregar; un informe que no pasa no se entrega.
+
+Quedan invariantes que ninguna herramienta decide por ti: `not_applicable` exige razón de exclusión y `not_tested` no aumenta cobertura; `no_blocking_findings` no omite controles esenciales sin probar; el `target` puede ser propuesta si `target_origin` lo aclara; y una hipótesis sigue siendo hipótesis aunque el esquema la acepte. Decláralas en `limitations`.
+
+En MD presenta el mismo contenido en forma legible, sin volcar JSON. Agrega versión del paquete, skill, fecha y alcance. Conserva resultados brutos separados de la síntesis.

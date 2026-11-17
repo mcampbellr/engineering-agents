@@ -1,0 +1,38 @@
+{
+  "python": "3.9.6",
+  "fixture_checks": [
+    {
+      "case": "S1/S2",
+      "leaf_attempts": [
+        27,
+        3
+      ]
+    },
+    {
+      "case": "W1/W2",
+      "unsafe_cross_tenant": true,
+      "safe_cross_tenant": false,
+      "legitimate_access": true
+    },
+    {
+      "case": "D1/D2",
+      "unsafe_duplicates": 2,
+      "safe_duplicate_rejected": true,
+      "other_tenant_allowed": true
+    },
+    {
+      "case": "M1/M2",
+      "peak_live_objects": {
+        "eager": [
+          1000,
+          10000
+        ],
+        "streaming": [
+          2,
+          2
+        ]
+      },
+      "unit": "objects, not bytes or RSS"
+    }
+  ]
+}

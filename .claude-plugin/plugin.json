@@ -1,0 +1,12 @@
+{
+  "name": "engineering-agents",
+  "version": "0.2.1",
+  "description": "Twelve engineering review and audit skills with shared evidence reporting and domain-specific workflows.",
+  "author": {
+    "name": "Mario Campbell"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "experimental": {
+    "evals": "evals"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Revisión de reutilización"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $reuse-review para revisar este proyecto con evidencia."

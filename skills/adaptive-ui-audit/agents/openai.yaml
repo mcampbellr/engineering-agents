@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditoría de UI adaptable"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $adaptive-ui-audit para revisar este proyecto con evidencia."

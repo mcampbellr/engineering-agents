@@ -1,0 +1,230 @@
+{
+  "name": "engineering-agents",
+  "version": "0.2.1",
+  "roles": [
+    {
+      "name": "scalability-audit",
+      "title": "Arquitecto de escalabilidad y rendimiento",
+      "description": "Audit system scalability, throughput, tail latency, overload and resilience using workload evidence. Use for architecture or backend capacity reviews, not a standalone client rendering audit.",
+      "profile": "profiles/scalability-audit.md",
+      "sources": [
+        "sre-slo",
+        "sre-overload",
+        "aws-retries",
+        "k6-load",
+        "sre-cascading",
+        "sre-managing-load"
+      ],
+      "agent": {
+        "name": "scalability-auditor",
+        "description": "Delegated subagent that traces throughput, tail latency, overload and resilience on a critical path and returns evidence-backed findings to its parent. Invoke it from a parent audit; it writes no report of its own."
+      }
+    },
+    {
+      "name": "web-security-audit",
+      "title": "Especialista en seguridad web",
+      "description": "Audit web application attack paths, authentication, authorization, business logic and tenant isolation with OWASP verification evidence. Use for defensive application security reviews; not a secret, dependency or CI/CD scanner.",
+      "profile": "profiles/web-security-audit.md",
+      "sources": [
+        "asvs",
+        "wstg"
+      ],
+      "agent": {
+        "name": "web-security-auditor",
+        "description": "Delegated subagent that traces application attack paths, authentication, authorization and tenant isolation against OWASP verification requirements and returns findings to its parent. Not a secret, dependency or SAST scanner; it writes no report of its own."
+      }
+    },
+    {
+      "name": "data-architecture-audit",
+      "title": "Arquitecto de estructura y organización de datos",
+      "description": "Audit data ownership, schemas, invariants, module boundaries and concurrency correctness. Use for data architecture and code organization reviews, not stylistic folder rearrangement.",
+      "profile": "profiles/data-architecture-audit.md",
+      "sources": [
+        "pg-constraints",
+        "pg-isolation",
+        "pg-explain",
+        "pg-indexes",
+        "pg-altertable",
+        "pg-populate"
+      ],
+      "agent": {
+        "name": "data-architecture-auditor",
+        "description": "Delegated subagent that traces data ownership, schema invariants, module boundaries and concurrency correctness and returns findings to its parent. Invoke it from a parent audit; it writes no report of its own."
+      }
+    },
+    {
+      "name": "memory-data-audit",
+      "title": "Especialista en memoria y datos masivos",
+      "description": "Audit memory retention, bounded concurrency, streaming, pagination and cache correctness for large datasets. Use for memory and bulk data reviews; distinguish measured leaks from static risks.",
+      "profile": "profiles/memory-data-audit.md",
+      "sources": [
+        "node-streams",
+        "node-heap",
+        "python-memory",
+        "go-diagnostics",
+        "redis-eviction",
+        "pg-pagination",
+        "pg-isolation",
+        "cgroup-v2"
+      ],
+      "agent": {
+        "name": "memory-data-auditor",
+        "description": "Delegated subagent that traces memory retention, bounded concurrency, streaming, pagination and cache correctness over large datasets and returns findings to its parent. Invoke it from a parent audit; it writes no report of its own."
+      }
+    }
+  ],
+  "bundled_skills": [
+    {
+      "name": "ai-audit",
+      "title": "Auditoría de uso de IA",
+      "description": "Review LLM integrations, prompts, token budgets, agent orchestration, observability, evaluations and AI security. Use for AI/LLM usage audits.",
+      "source": "source-skills/ai-audit",
+      "scope": "AI/LLM usage and its own eight-area rubric",
+      "agents": [
+        {
+          "name": "ai-audit-security-analyzer",
+          "source": "agents/ai-security-analyzer.md"
+        },
+        {
+          "name": "ai-audit-architecture-analyzer",
+          "source": "agents/architecture-analyzer.md"
+        },
+        {
+          "name": "ai-audit-detector",
+          "source": "agents/detector.md"
+        },
+        {
+          "name": "ai-audit-orchestrator",
+          "source": "agents/orchestrator.md"
+        },
+        {
+          "name": "ai-audit-report-writer",
+          "source": "agents/report-writer.md"
+        },
+        {
+          "name": "ai-audit-static-analyzer",
+          "source": "agents/static-analyzer.md"
+        }
+      ]
+    },
+    {
+      "name": "reuse-review",
+      "title": "Revisión de reutilización",
+      "description": "Review changes for duplicated implementations and missed compatible reuse, with evidence for both locations. Use for DRY and reuse reviews.",
+      "source": "source-skills/reuse-review",
+      "scope": "behavioral duplication and compatible shared ownership",
+      "agents": []
+    },
+    {
+      "name": "consistency-audit",
+      "title": "Auditoría de consistencia",
+      "description": "Find unintended implementation outliers among semantically comparable files. Use for codebase consistency audits; report before optional remediation.",
+      "source": "source-skills/consistency-audit",
+      "scope": "convention outliers, not duplication or aesthetic uniformity",
+      "agents": []
+    },
+    {
+      "name": "performance-audit",
+      "title": "Auditoría de rendimiento web y móvil",
+      "description": "Audit web/native client loading, rendering, bundles, requests and runtime performance. Use for client slowness; backend capacity belongs to scalability-audit.",
+      "source": "source-skills/performance-audit",
+      "scope": "web/native client performance, not backend capacity",
+      "agents": [
+        {
+          "name": "performance-audit-cross-cutting-analyzer",
+          "source": "agents/cross-cutting-analyzer.md"
+        },
+        {
+          "name": "performance-audit-native-analyzer",
+          "source": "agents/native-analyzer.md"
+        },
+        {
+          "name": "performance-audit-orchestrator",
+          "source": "agents/orchestrator.md"
+        },
+        {
+          "name": "performance-audit-profiler",
+          "source": "agents/profiler.md"
+        },
+        {
+          "name": "performance-audit-report-writer",
+          "source": "agents/report-writer.md"
+        },
+        {
+          "name": "performance-audit-web-analyzer",
+          "source": "agents/web-analyzer.md"
+        }
+      ]
+    },
+    {
+      "name": "adaptive-ui-audit",
+      "title": "Auditoría de UI adaptable",
+      "description": "Audit responsive web, mobile and desktop layouts for overflow, breakpoints, safe areas, keyboard visibility, reflow and window resizing.",
+      "source": "source-skills/adaptive-ui-audit",
+      "scope": "responsive usability, not generic visual restyling",
+      "agents": [
+        {
+          "name": "adaptive-ui-audit-desktop-crosscutting-analyzer",
+          "source": "agents/desktop-crosscutting-analyzer.md"
+        },
+        {
+          "name": "adaptive-ui-audit-native-analyzer",
+          "source": "agents/native-analyzer.md"
+        },
+        {
+          "name": "adaptive-ui-audit-orchestrator",
+          "source": "agents/orchestrator.md"
+        },
+        {
+          "name": "adaptive-ui-audit-profiler",
+          "source": "agents/profiler.md"
+        },
+        {
+          "name": "adaptive-ui-audit-report-writer",
+          "source": "agents/report-writer.md"
+        },
+        {
+          "name": "adaptive-ui-audit-web-analyzer",
+          "source": "agents/web-analyzer.md"
+        }
+      ]
+    },
+    {
+      "name": "infra-cost-audit",
+      "title": "Auditoría de costos de infraestructura",
+      "description": "Review infrastructure sizing, unused resources and operational cost risks. Use for infrastructure cost audits; LLM token costs belong to ai-audit.",
+      "source": "source-skills/infra-cost-audit",
+      "scope": "infrastructure resources and billing, not LLM token usage",
+      "agents": []
+    },
+    {
+      "name": "security-audit",
+      "title": "Auditoría técnica de seguridad",
+      "description": "Audit sensitive files, secrets, dependency vulnerabilities, supply-chain integrity and CI/CD security. Use for repository security scanning; application authorization belongs to web-security-audit.",
+      "source": "source-skills/security-audit",
+      "scope": "secrets, dependencies and CI/CD; complements web-security-audit",
+      "agents": []
+    },
+    {
+      "name": "superreview",
+      "title": "Superreview",
+      "description": "Review a scoped diff through three independent static lanes, deduplicate findings and apply the existing remediation policy. Use when Superreview is explicitly requested.",
+      "source": "source-skills/superreview",
+      "scope": "three-lane static review and its existing remediation/verification policy",
+      "agents": [
+        {
+          "name": "superreview-stack-data-subagent",
+          "source": "agents/code-review.md"
+        },
+        {
+          "name": "superreview-code-quality-subagent",
+          "source": "agents/superreview-code-quality-subagent.md"
+        },
+        {
+          "name": "superreview-correctness-security-subagent",
+          "source": "agents/superreview-correctness-security-subagent.md"
+        }
+      ]
+    }
+  ]
+}

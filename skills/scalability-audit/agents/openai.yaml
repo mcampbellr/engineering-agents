@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arquitecto de escalabilidad y rendimiento"
+  short_description: "Auditoría con evidencia y validación reproducible"
+  default_prompt: "Usa $scalability-audit para auditar este proyecto y justificar cada hallazgo."

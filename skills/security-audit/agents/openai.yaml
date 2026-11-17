@@ -1,0 +1,6 @@
+interface:
+  display_name: "Auditoría técnica de seguridad"
+  short_description: "Revisión especializada con evidencia y alcance claro"
+  default_prompt: "Usa $security-audit para revisar este proyecto con evidencia."
+policy:
+  allow_implicit_invocation: false

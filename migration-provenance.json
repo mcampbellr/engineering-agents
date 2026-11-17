@@ -1,0 +1,170 @@
+{
+  "imported_on": "2026-10-27",
+  "policy": "Original workflow files copied into canonical source-skills; host/output adaptations are generated from core integration contracts. No domain-quality benchmark claimed.",
+  "skills": [
+    {
+      "name": "ai-audit",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/ai-audit",
+      "original_sha256": {
+        "SKILL.md": "a0494f8f626fb90549c4d21dbb6b003f1e7fe522f08b78d510f59bc74ed64a2e",
+        "references/ai-security.md": "0c982582498b276fd8c7a0ffd7599685044b2f7f42d7686ec66df8d9fbe9469c",
+        "references/prompt-efficiency.md": "18b900357d767459faf1a8a8bafd59b9f657f01f9f1b28d61b429483c0304ca7",
+        "references/legal-compliance.md": "ea25c336e677baa11154b013790bf84882535bb18b974e42da42eca9fb20c78a",
+        "references/report-format-enforcer.md": "c343bdcc4e2cf07ff619384650906cb25e3fb21a32dcd768fbe7d90a39405d71",
+        "references/agent-architecture.md": "cd8dbc48daaa206ed2ad8ea1bfc130147714c5f2170a622dcc576be618b23f2d",
+        "references/detection.md": "d9bdc2a29f426114fc6ecd53ebbdb38b1a799ac511267d172464bf8bb98df408",
+        "references/observability.md": "8f2b86687182441a10edc889c6ece2892e04921199a463f6d9ad29d15fb2b421",
+        "references/integration-hygiene.md": "bb7966ac85db11cfd77d67afaa476fa9a838824f13129809011c1fcb097e6aed",
+        "references/token-caching.md": "e9a979cd8e1c6b91cb917d1ba8e7c58d58e1c48085262145a3abd3290d5a3740",
+        "references/report-generator.md": "195bd09c554b1bd2d84f9ba129cd727f94e2fcce2b1503d54717e8537c5286de",
+        "references/evaluation.md": "cc2d4905bd2d3a66c5382481019f0bf3a110700f23f4511bd3c24ee23d4b62ba",
+        "agents/orchestrator.md": "a5c626c534bdcccd76f7a0f483183f969bbd2afc3b31459011037e1f37b54bff",
+        "agents/report-writer.md": "dcdec3af004fbb35215e333952d0e8a9197ac557ce4d2ef5ed7851a66c05f238",
+        "agents/architecture-analyzer.md": "1fb162bcc0cb6115792379636d8ac137bf64db7622c0a5cd15c9e1345b9f5c8f",
+        "agents/detector.md": "14390170b8400e3994d97d4f577f5c71b87d3f119f51b1f0040453b8fd833d63",
+        "agents/static-analyzer.md": "ae6979ee83ffb900d2bae635eebff3e48322ba60e3bdb9ae8a8ac77cc106736e",
+        "agents/ai-security-analyzer.md": "7cc2f49da0066161b25f1790d714d303f9b22192a3ef4cf60f96d67aef299dce",
+        "assets/report-template.md": "e76b0368feb91839956e255af0d989090cde04cc494a2384273b5dad4331eba3"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "reuse-review",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/reuse-review",
+      "original_sha256": {
+        "SKILL.md": "a9e3372e5fa709262c7671de0bde15424d789f7e6c9f2c0188b7ee4bfe96b838",
+        "agents/openai.yaml": "b968e504f7cbf6840d5350cd6a35d297debb085ad1059ba2db87e727afe03e89"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "consistency-audit",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/consistency-audit",
+      "original_sha256": {
+        "SKILL.md": "7d6a350d9a4baad67119b132cd6cdecd9ec18be48a96b8b07bf684c68842728e"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "performance-audit",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/performance-audit",
+      "original_sha256": {
+        "SKILL.md": "6cebafe362e3e6726db5d5162ae2ad39cd49de26e20811bab0c07dc8a26d90ef",
+        "references/web-network-data.md": "9b9a4ad5c26c2c98f2707b08c8b3008c43f49c4b3362499aff10917937f4d57f",
+        "references/native-rendering-lists.md": "4cd4e86ede176b4e2d789fe6f87427832def94f53eb9050a8e90a278105754ee",
+        "references/framework-rules.md": "5205feba57c3ace61f79161b519d1e2706e53a1d5959783bd8dcdb105e2c0895",
+        "references/web-javascript-bundles.md": "21e3e676dfc93f98742ceffe00304ba82492a763f0a4bff778a5f1764ce90576",
+        "references/web-assets.md": "c19424af3732e1bf6b01d855e95668d4a11fe3960e3d5321d60a6ca3339eb63f",
+        "references/runtime-validation.md": "8eee06770afe484e391fd6844c2694761c0ade639475dc03c618ac477014b673",
+        "references/dependencies.md": "ee5b8fe3239fcb765434ffb002a57ce561c4ed9263dee9eb4017d7a5c4957666",
+        "references/report-format-enforcer.md": "1bda89adf852827da4ee48817c705e8d5005a0bb3ef2870bc36044f4404a32a9",
+        "references/discovery.md": "afe5b0adb5761f1586ab1e70b085a96e48c00a0f8552f1602acd21ed045019a5",
+        "references/native-runtime.md": "0bb78aa171af1f750e19408965899fb6857cbe10dfaa64970306015c77306d81",
+        "references/anti-patterns.md": "9e61b0266edfa8e89272945fb81eb691ce7e180fa12b12da8762501c189ace3e",
+        "references/web-rendering.md": "f3ff3023127744ebfbb000adbfe8024e821a49368fc52ff5c2d8e3eccc54d7ce",
+        "references/report-generator.md": "fab4ff84f6fb9d0b04bca6f65bd3c5dcbfdccea41d5e75107c50988b14caafc1",
+        "references/web-loading-cwv.md": "d4bf82f36000f929fb056389dd31d7df30f6c1abb07667caf5a3da06f192952f",
+        "agents/orchestrator.md": "a2254a0cd91474e2b7a744fcaf8911da289a1f809651875c4da5de0cf6a7bb73",
+        "agents/report-writer.md": "c00394824663349df0e990c47c4f512f6ee9696506d350f84ca5d3cb95659394",
+        "agents/web-analyzer.md": "0e5eb787ab51bbc78f23445daa08836fde86300638a0d323fd80964870744bd8",
+        "agents/profiler.md": "9daef276cc167f7a280987b22683868d938f9cc9b63259abd462824f43375fb8",
+        "agents/native-analyzer.md": "af5eb69a8273bb1607d04c91923b1a945f080498db78443947bd79bafcb99a17",
+        "agents/cross-cutting-analyzer.md": "ebac367e18cb9b5e0a948154b7d6b0fae93d9d940175782b8bb5ec6a52daae21",
+        "assets/report-template.md": "7e68639dcbb28549e8a8153a6d30087a1deeecf03a876cfb000faf34928bc9fb"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "adaptive-ui-audit",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/adaptive-ui-audit",
+      "original_sha256": {
+        "SKILL.md": "26b1e4cf77ba8e416cfc76870c089b4a0ec2c437867cc66047381e16c83c05b3",
+        "references/web-breakpoints-viewport.md": "b0171930275fff43c567ae75d2f7ebd0f1c5027ed445852601869fefb36f23c0",
+        "references/native-touch-ergonomics.md": "105806d4b1727648a18d0729dd719a796c82545b0039f84da540ff4d6064d04a",
+        "references/web-interaction-reflow.md": "29b966dc4f8fcb21e5d80d65717275845aaf170e4cd012e85ff9e51c6d8a2f04",
+        "references/web-layout-overflow.md": "4807a1a39d5bb7779f62c370499a3d3ee129eca77dec1661855e9af6695fe031",
+        "references/framework-rules.md": "31ad1ffdb9c83bad404a1ef883b9816121077108d69750cdf3ee6ca6407cfcb9",
+        "references/runtime-validation.md": "4068ee2428c659ae07ac6c8d5cacd8e38064605b638a01951b44c9a058dc4eb2",
+        "references/native-adaptive-layout.md": "58f78c5e7334bfdd282c3abf558f3e68806ded7e7d3f3465eaf556f760d3f8ef",
+        "references/report-format-enforcer.md": "7721fad8e0b7ac9f79bf0913ab4c8689bb78c4344d680fd26b64138ac0c7fe69",
+        "references/native-keyboard-input.md": "0ddfb56ffb4dc82ff38848bb108f71ad1a30d3f1b1d70aeb0bbbfea729d99624",
+        "references/native-safe-area.md": "153ca8fd967d88a2c102eecae5e21109359e8d04b9cb086cad62069edaeaef0a",
+        "references/discovery.md": "137bdf13091b08cf7e8c7b46576059f0ceacdee40e9f4210b73b3b6d35e7fd49",
+        "references/desktop-window-resize.md": "afc49b8147c9073b7c26ba7f67b5b93362a5e6fff3d977bac22499b021e0a75c",
+        "references/web-adaptive-components.md": "33c6b42d373a8fbf533689d48163fbb01cda933268682cbb9f9b00dda605b465",
+        "references/anti-patterns.md": "af60e6df61d4d29fd719134388059bf78d4e3476818186de26f208676edadfb3",
+        "references/responsive-consistency.md": "2dbda51912a50e0e2384d5807686d05e03064967966031415d02164510b78c1e",
+        "references/report-generator.md": "a9c392b080e32fb06c5b95edf756f50d5ae11bc7b0cbb4f8bd07bf147d646826",
+        "agents/orchestrator.md": "712cd30adbbd29f1e4a13dd5e6df523cc2e4de595d3411fe06724a0735784785",
+        "agents/report-writer.md": "5343dad50a023b6a1b82322191590d90cd8ef6905fe164b704d4b772803d0501",
+        "agents/web-analyzer.md": "cae11140208463e520f87a532a6e76bba79c0ac4b5dbf960c47fb72c5b9f862d",
+        "agents/profiler.md": "51e90c441291cf30e150a513f66bee6ca83cb44e5fbb5851a0013183c4d61159",
+        "agents/native-analyzer.md": "67bd64b9651983544e769a066b7d17263d1da35f7a3d483aba0e5e94b61bf48b",
+        "agents/desktop-crosscutting-analyzer.md": "c48045acff28de706ac7eb4c0e1c3284159f43c011eeea60bcd35ee82c49cbee",
+        "assets/report-template.md": "eff9b0ef47ff843e10bbe221414246375e9164a7115fad5f872f989acad37d32"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "infra-cost-audit",
+      "origin": "Mac dotfiles working tree",
+      "original_path": "~/.claude/skills/infra-cost-audit",
+      "original_sha256": {
+        "SKILL.md": "79ebe40c82ab060d898a949559a887adda86f5b7b435c14be4fb0818bc98f0e5"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "security-audit",
+      "origin": "Cerebro dotfiles working tree",
+      "original_path": "/home/mcampbellr/src/dotfiles/claude/.claude/skills/security-audit",
+      "original_sha256": {
+        "SKILL.md": "f01976cb00950057a0bf704cfb4dc71be6fa3680e77257479615d2b98b8cde54",
+        "references/scoring.md": "c7386c6dac81d6c8ab92fe9580bff78fffc9401b02cb27ffadb1eaa05ea35d54"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained"
+      ]
+    },
+    {
+      "name": "superreview",
+      "origin": "Cerebro dotfiles working tree",
+      "original_path": "/home/mcampbellr/src/dotfiles/claude/.claude/skills/superreview",
+      "original_sha256": {
+        "SKILL.md": "4f35ee8ce1e1a0ecf6dfa09d0674072d650f390ed5ff740e01d4860ca006026f",
+        "references/review-policy.md": "cbe43fb04c30402a597e4b3974c34862edaee0eaec240d053f011d4d85900b2d",
+        "scripts/validate-static-review.sh": "6fb711f3057c9d6e648fe677f03dff3dc356d8b204ba4f65eefc685d0b8e8038",
+        "scripts/sync-mariobot-policy.sh": "d3e83ec897dee3e9478bcb3530df3e84997288eee2940f0c89f74c679b083552"
+      },
+      "adaptations": [
+        "host tool and model compatibility",
+        "common output envelope; original domain details retained",
+        "bundled three reviewer definitions and anti-slop references"
+      ]
+    }
+  ]
+}
